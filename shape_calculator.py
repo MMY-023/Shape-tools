@@ -61,18 +61,19 @@ def triangle_prism(height,base,length):
     v = height*base/2*length
     return v
 
+# Exeption handling(integer,float)
 try :
     # Oprator recognize
     def detect_oprator(oprator):
         # Volume calculator
         if oprator == 'volume' :
-
+            # get a shape name to start the calculate volume opration
             shape = str(input("Please enter the shape to calculate its volume (globe,cube,cylinder,triangle prism) :"))
-
+            
             if shape == "globe" :
                 radius = float(input("Please enter the radius :"))
                 print("The volume of %s is"%("globe"),globe(radius))
-
+            
             elif shape == "cube" :
                 width = float(input("Please enter the width :"))
                 height = float(input("Please enter the width :"))
@@ -96,6 +97,7 @@ try :
 
         # Space calculator
         elif oprator == 'space' :
+            # get a shape name to start the calculate space opration
             shape = str(input("Please enter the shape to calculate its space (triangle,circle,square,trapezius,rhombus,rectangle) :"))
             
             if shape == "triangle" :
@@ -133,6 +135,7 @@ try :
     
         # Environment calculator
         elif oprator == 'environment' :
+            # get a shape name to start the calculate environment opration
             shape = str(input("Please enter the shape to calculate its environment (triangle,circle,square,rhombus,rectangle) :"))
 
             if shape == "triangle" :
@@ -163,8 +166,6 @@ try :
         # Exeption handling(volume,space,environment)
         else : 
             print("Sorry! We can't recognize this oprator.")
-
-
 
 except : 
 
