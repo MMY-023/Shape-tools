@@ -1,95 +1,98 @@
 # Space functions
 def triangle_s(height,base):
-    s = height*base/2
-    return s
+    return height*base/2
 
-def circle_s(radius):
-    s = 3.14*radius**2
-    return s
+def circle_s(radius): 
+    return 3.14*radius**2
 
 def square_s(side):
-    s = side**2
-    return s
+    return side**2
 
 def trapezius_s(height,base1,base2):
-    s = (base1+base2)*height/2
-    return s
+    return (base1+base2)*height/2
 
 def rhombus_s(diameter1,diameter2):
-    s = diameter1*diameter2
-    return s
+    return diameter1*diameter2
 
 def rectangle_s(width,length):
-    s = width*length
-    return s
+    return width*length
 
 # Environment functions
 def triangle_e(side):
-    e = side*3
-    return e
+    return side*3
 
 def circle_e(radius):
-    e = 3.14*radius*2
-    return e
+    return 3.14*radius*2
 
 def square_e(side):
-    e = side*4
-    return e
+    return side*4
 
 def rhombus_e(side):
-    e = side*4
-    return e
+    return side*4
 
 def rectangle_e(width,length):
-    e = (width+length)*2
-    return e
+    return (width+length)*2
 
 # Volume functions
 def globe(radius):
-    v = 4/3 * 3.14 * radius**3
-    return v
+    return 4/3 * 3.14 * radius**3
 
 def cube(width,height,length):
-    v = width*height*length
-    return v
+    return width*height*length
 
 def cylinder(radius,height):
-    v = height*3.14*radius**2
-    return v
+    return height*3.14*radius**2
 
 def triangle_prism(height,base,length):
-    v = height*base/2*length
-    return v
+    return height*base/2*length
 
-# Exeption handling(integer,float)
-try :
-    # Oprator recognize
-    def detect_oprator(oprator):
+# Oprator recognize
+def detect_oprator(oprator):
         # Volume calculator
         if oprator == 'volume' :
             # get a shape name to start the calculate volume opration
             shape = str(input("Please enter the shape to calculate its volume (globe,cube,cylinder,triangle prism) :"))
-            
-            if shape == "globe" :
-                radius = float(input("Please enter the radius :"))
-                print("The volume of %s is"%("globe"),globe(radius))
-            
-            elif shape == "cube" :
-                width = float(input("Please enter the width :"))
-                height = float(input("Please enter the width :"))
-                length = float(input("Please enter the width :"))
-                print("The volume of %s is"%("cube"),cube(width,height,length))
 
+            if shape == "globe" :
+                # Exception handling(integer,float)
+                try :
+                    radius = float(input("Please enter the radius :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :   
+                    print("The volume of globe is",globe(radius))
+
+            elif shape == "cube" :
+                # Exception handling(integer,float)
+                try :
+                    width = float(input("Please enter the width :"))
+                    height = float(input("Please enter the height :"))
+                    length = float(input("Please enter the length :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The volume of cube is",cube(width,height,length))
+          
             elif shape == "cylinder" :
-                radius = float(input("Please enter the radius :"))
-                height = float(input("Please enter the width :"))
-                print("The volume of %s is"%("cylinder"),cylinder(radius,height))
+                # Exception handling(integer,float)
+                try : 
+                    radius = float(input("Please enter the radius :"))
+                    height = float(input("Please enter the width :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else:
+                    print("The volume of cylinder is",cylinder(radius,height))
 
             elif shape == "triangle prise" :
-                height = float(input("Please enter the width :"))
-                base = float(input("Please enter the base :"))
-                length = float(input("Please enter the width :"))
-                print("The volume of %s is"%("triangle prism"),triangle_prism(height,base,length))
+                # Exception handling(integer,float)
+                try :
+                    height = float(input("Please enter the width :"))
+                    base = float(input("Please enter the base :"))
+                    length = float(input("Please enter the width :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The volume of triangle prism is",triangle_prism(height,base,length))
 
             # Exeption handling(globe,cube,cylinder,triangle prism)
             else :
@@ -97,37 +100,67 @@ try :
 
         # Space calculator
         elif oprator == 'space' :
-            # get a shape name to start the calculate space opration
+            # get a shape name to start the calculate volume opration
             shape = str(input("Please enter the shape to calculate its space (triangle,circle,square,trapezius,rhombus,rectangle) :"))
             
             if shape == "triangle" :
-                height = float(input("Please enter the height :"))
-                base = float(input("Please enter the base :"))
-                print("The space of %s is"%("triangle"),triangle_s(height,base))
+                # Exception handling(integer,float)
+                try :
+                    height = float(input("Please enter the height :"))
+                    base = float(input("Please enter the base :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")   
+                else :
+                    print("The space of triangle is",triangle_s(height,base))
 
             elif shape == "circle" :
-                radius = float(input("Please enter the radius :"))
-                print("The space of %s is"%("circle"),circle_s(radius))
+                # Exception handling(integer,float)
+                try :
+                    radius = float(input("Please enter the radius :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float") 
+                else :
+                    print("The space of circle is",circle_s(radius))
 
             elif shape == "square" :
-                s = float(input("Please enter the side :"))
-                print("The space of %s is"%("square"),square_s(s))
+                # Exception handling(integer,float)
+                try :
+                    side = float(input("Please enter the side :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")   
+                else :  
+                    print("The space of square is",square_s(side))
 
             elif shape == "trapezius" :
-                base_1 = float(input("Please enter the upper base :"))
-                base_2 = float(input("Please enter the bottom base :"))
-                height = float(input("Please enter the height :"))
-                print("The space of %s is"%("trapezius"),trapezius_s(base_1,base_2,height))
+                # Exception handling(integer,float)
+                try :
+                    base_1 = float(input("Please enter the upper base :"))
+                    base_2 = float(input("Please enter the bottom base :"))
+                    height = float(input("Please enter the height :"))
+                except : 
+                    print("Something went wrong! Please enter an integer or float")  
+                else :  
+                    print("The space of trapezius is",trapezius_s(base_1,base_2,height))
 
             elif shape == "rhombus" :
-                large_diameter = float(input("Please enter the large diameter :"))
-                small_diameter = float(input("Please enter the small diameter :"))
-                print("The space of %s is"%("rhombus"),rhombus_s(large_diameter,small_diameter))
+                # Exception handling(integer,float)
+                try :
+                    large_diameter = float(input("Please enter the large diameter :"))
+                    small_diameter = float(input("Please enter the small diameter :"))
+                except :    
+                    print("Something went wrong! Please enter an integer or float")      
+                else :  
+                    print("The space of rhombus is",rhombus_s(large_diameter,small_diameter))
 
             elif shape == "rectangle" :
-                width = float(input("Please enter the width :"))
-                length = float(input("Please enter the length :"))
-                print("The space of %s is"%("rectangle"),rectangle_s(width,length))
+                # Exception handling(integer,float)
+                try :
+                    width = float(input("Please enter the width :"))
+                    length = float(input("Please enter the length :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The space of rectangle is",rectangle_s(width,length))
             
             # Exeption handling(triangle,circle,square,trapezius,rhombus,rectangle)
             else :
@@ -135,29 +168,54 @@ try :
     
         # Environment calculator
         elif oprator == 'environment' :
-            # get a shape name to start the calculate environment opration
+            # get a shape name to start the calculate volume opration
             shape = str(input("Please enter the shape to calculate its environment (triangle,circle,square,rhombus,rectangle) :"))
 
             if shape == "triangle" :
-                side = float(input("Please enter the side :"))
-                print("The environment of %s is"%("triangle"),triangle_e(side))
+                # Exception handling(integer,float)
+                try :
+                    side = float(input("Please enter the side :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :   
+                    print("The environment of triangle is",triangle_e(side))
 
             elif shape == "circle" :
-                radius = float(input("Please enter the radius :"))
-                print("The environment of %s is"%("circle"),circle_e(radius))
+                # Exception handling(integer,float)
+                try :
+                    radius = float(input("Please enter the radius :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The environment of circle is",circle_e(radius))
 
             elif shape == "square" :
-                side = float(input("Please enter the side :"))
-                print("The environment of %s is"%("square"),square_e(side))
+                # Exception handling(integer,float)
+                try :
+                    side = float(input("Please enter the side :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The environment of square is",square_e(side))
 
             elif shape == "rhombus" :
-                side = float(input("Please enter the side :"))
-                print("The environment of %s is"%("rhombus"),rhombus_e(side))
+                # Exception handling(integer,float)
+                try :
+                    side = float(input("Please enter the side :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The environment of rhombus is",rhombus_e(side))
 
             elif shape == "rectangle" :
-                width = float(input("Please enter the width :"))
-                length = float(input("Please enter the length :"))
-                print("The environment of %s is"%("rectangle"),rectangle_e(width,length))
+                # Exception handling(integer,float)
+                try :
+                    width = float(input("Please enter the width :"))
+                    length = float(input("Please enter the length :"))
+                except :
+                    print("Something went wrong! Please enter an integer or float")
+                else :
+                    print("The environment of rectangle is",rectangle_e(width,length))
 
             # Exeption handling(triangle,circle,square,rhombus,rectangle)
             else :
@@ -167,35 +225,30 @@ try :
         else : 
             print("Sorry! We can't recognize this oprator.")
 
-except : 
-
-    print("Somthing went wrong! Please enter an integer or float.")
-
-else :
-    # Welcom title
-    print("""Welcome to space calculator.
+# Welcom title
+print("""Welcome to space calculator.
 _______________________________
 -------------------------------""")
-    # Program loop
-    while True :
+# Program loop
+while True :
 
-        # Get the oprator name
-        oprator = str(input("Please enter an oprator to calculate (volume,space,environment) :"))
-        detect_oprator(oprator)
+    # Get the oprator name
+    oprator = str(input("Please enter an oprator to calculate (volume,space,environment) :"))
+    detect_oprator(oprator)
 
-        # Get a order to continue
-        order = input("Do you wanna play again? please enter (y/n) :")
+    # Get a order to continue
+    order = input("Do you wanna play again? please enter (y/n) :")
 
-        # Exit the program
-        if order == 'n' :
-                print("Goodluck!")
-                break
+    # Exit the program
+    if order == 'n' :
+            print("Goodluck!")
+            break
         
-        # Play agine
-        elif order == 'y' :
-                pass
+    # Play agine
+    elif order == 'y' :
+            pass
         
-        # Exeption handling(y/n)
-        else :
-                print("Somthing went wrong! You didn't enter y or n.")
-                break
+    # Exeption handling(y/n)
+    else :
+            print("Somthing went wrong! You didn't enter y or n.")
+            break
