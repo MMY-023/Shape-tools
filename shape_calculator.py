@@ -226,7 +226,7 @@ def detect_oprator(oprator):
             print("Sorry! We can't recognize this oprator.")
 
 # Welcom title
-print("""Welcome to space calculator.
+print("""Welcome to shape calculator.
 _______________________________
 -------------------------------""")
 # Program loop
