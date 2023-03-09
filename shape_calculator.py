@@ -233,7 +233,7 @@ _______________________________
 while True :
 
     # Get the oprator name
-    oprator = str(input("Please enter an oprator to calculate (volume,space,environment) :"))
+    oprator = input("Please enter an oprator to calculate (volume,space,environment) :")
     detect_oprator(oprator)
 
     # Get a order to continue
