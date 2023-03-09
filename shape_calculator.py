@@ -51,7 +51,7 @@ def detect_oprator(oprator):
         # Volume calculator
         if oprator == 'volume' :
             # get a shape name to start the calculate volume opration
-            shape = str(input("Please enter the shape to calculate its volume (globe,cube,cylinder,triangle prism) :"))
+            shape = input("Please enter the shape to calculate its volume (globe,cube,cylinder,triangle prism) :")
 
             if shape == "globe" :
                 # Exception handling(integer,float)
@@ -101,7 +101,7 @@ def detect_oprator(oprator):
         # Space calculator
         elif oprator == 'space' :
             # get a shape name to start the calculate volume opration
-            shape = str(input("Please enter the shape to calculate its space (triangle,circle,square,trapezius,rhombus,rectangle) :"))
+            shape = input("Please enter the shape to calculate its space (triangle,circle,square,trapezius,rhombus,rectangle) :")
             
             if shape == "triangle" :
                 # Exception handling(integer,float)
@@ -169,7 +169,7 @@ def detect_oprator(oprator):
         # Environment calculator
         elif oprator == 'environment' :
             # get a shape name to start the calculate volume opration
-            shape = str(input("Please enter the shape to calculate its environment (triangle,circle,square,rhombus,rectangle) :"))
+            shape = input("Please enter the shape to calculate its environment (triangle,circle,square,rhombus,rectangle) :")
 
             if shape == "triangle" :
                 # Exception handling(integer,float)
